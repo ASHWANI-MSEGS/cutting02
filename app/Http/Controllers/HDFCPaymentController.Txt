@@ -1,0 +1,552 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App;
+
+use App\Payment;
+use App\Grant;
+use App\Form;
+use App\Estimate;
+use App\Tracker;
+use Illuminate\Http\Request;
+use App\Crypto;
+use Redirect;
+use Illuminate\Support\Facades\DB;
+
+
+
+class HDFCPaymentController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create(Request $request)
+    {
+        error_reporting(0);
+
+      function encrypt1($plainText,$key)
+	{
+		$key = hextobin(md5($key));
+		$initVector = pack("C*", 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f);
+		$openMode = openssl_encrypt($plainText, 'AES-128-CBC', $key, OPENSSL_RAW_DATA, $initVector);
+		$encryptedText = bin2hex($openMode);
+		return $encryptedText;
+	}
+
+	function decrypt1($encryptedText,$key)
+	{
+		$key = hextobin(md5($key));
+		$initVector = pack("C*", 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f);
+		$encryptedText = hextobin($encryptedText);
+		$decryptedText = openssl_decrypt($encryptedText, 'AES-128-CBC', $key, OPENSSL_RAW_DATA, $initVector);
+		return $decryptedText;
+	}
+	//*********** Padding Function *********************
+
+	 function pkcs5_pad ($plainText, $blockSize)
+	{
+	    $pad = $blockSize - (strlen($plainText) % $blockSize);
+	    return $plainText . str_repeat(chr($pad), $pad);
+	}
+
+	//********** Hexadecimal to Binary function for php 4.0 version ********
+
+	function hextobin($hexString) 
+   	 { 
+        	$length = strlen($hexString); 
+        	$binString="";   
+        	$count=0; 
+        	while($count<$length) 
+        	{       
+        	    $subString =substr($hexString,$count,2);           
+        	    $packedString = pack("H*",$subString); 
+        	    if ($count==0)
+		    {
+				$binString=$packedString;
+		    } 
+        	    
+		    else 
+		    {
+				$binString.=$packedString;
+		    } 
+        	    
+		    $count+=2; 
+        	} 
+  	        return $binString; 
+    	  } 
+
+        // $merchant_data=' ';
+        $working_key='130CB2942C6C0D0101E770B9BBEA4235';//Shared by CCAVENUES
+        $access_code='AVIJ96HJ19BU63JIUB';//Shar
+
+        // $merchant_data='';
+        // $working_key='130CB2942C6C0D0101E770B9BBEA4235';//Shared by CCAVENUES
+        // $access_code='AVIJ96HJ19BU63JIUB';//Shared by CCAVENUES
+
+    //     $merchant_data='2';
+	// $working_key='E2B122A0140C55090B17A284925A0465';//Shared by CCAVENUES
+	// $access_code='AVVM67DI04BP90MVPB';//Shared by CCAVENUES
+        
+        //  $mt =  $request->toArray();
+
+        // $st= json_encode($request);
+        foreach ($request->all() as $key => $value){
+            $merchant_data.=$key.'='.$value.'&';
+    
+        }
+
+        // dd($request->all());
+
+        // dd($request->all());
+        
+
+        // dd($merchant_data);
+
+        $encrypted_data=encrypt1($merchant_data,$working_key); 
+
+            // dd($encrypted_data);
+
+
+        $decrypted_data=decrypt1($encrypted_data,$working_key);
+
+        // echo($decrypted_data);
+        //  dd($decrypted_data);
+
+        $tracker = new Tracker;
+        $tracker->encrypted_data = $encrypted_data;
+        $tracker->encResponse = 9;
+        $tracker->rcvdString= 0;
+        $tracker->decryptValues= 0;
+        $tracker->save();
+        
+
+        return response()->json([
+            "encrypted_data" => $encrypted_data,
+            "access_code" => $access_code,
+            "decrypted_data" => $decrypted_data
+        ], 201);
+
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function responseH(Request $request)
+    {
+
+        error_reporting(0);
+
+      function encrypt1($plainText,$key)
+	{
+		$key = hextobin(md5($key));
+		$initVector = pack("C*", 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f);
+		$openMode = openssl_encrypt($plainText, 'AES-128-CBC', $key, OPENSSL_RAW_DATA, $initVector);
+		$encryptedText = bin2hex($openMode);
+		return $encryptedText;
+	}
+
+	function decrypt1($encryptedText,$key)
+	{
+		$key = hextobin(md5($key));
+		$initVector = pack("C*", 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f);
+		$encryptedText = hextobin($encryptedText);
+		$decryptedText = openssl_decrypt($encryptedText, 'AES-128-CBC', $key, OPENSSL_RAW_DATA, $initVector);
+		return $decryptedText;
+	}
+	//*********** Padding Function *********************
+
+	 function pkcs5_pad ($plainText, $blockSize)
+	{
+	    $pad = $blockSize - (strlen($plainText) % $blockSize);
+	    return $plainText . str_repeat(chr($pad), $pad);
+	}
+
+	//********** Hexadecimal to Binary function for php 4.0 version ********
+
+	function hextobin($hexString) 
+   	 { 
+        	$length = strlen($hexString); 
+        	$binString="";   
+        	$count=0; 
+        	while($count<$length) 
+        	{       
+        	    $subString =substr($hexString,$count,2);           
+        	    $packedString = pack("H*",$subString); 
+        	    if ($count==0)
+		    {
+				$binString=$packedString;
+		    } 
+        	    
+		    else 
+		    {
+				$binString.=$packedString;
+		    } 
+        	    
+		    $count+=2; 
+        	} 
+  	        return $binString; 
+    	  } 
+	
+        $workingKey='130CB2942C6C0D0101E770B9BBEA4235';		//Working Key should be provided here.
+        $access_code='AVIJ96HJ19BU63JIUB';
+        $encResponse = $request->encResp;			//This is the response sent by the CCAvenue Server
+        $rcvdString=decrypt1($encResponse,$workingKey);		//Crypto Decryption used as per the specified working key.
+        $order_status="";
+        $decryptValues=explode('&', $rcvdString);
+        $dataSize=sizeof($decryptValues);
+
+
+
+
+
+
+        for($i = 0; $i < $dataSize; $i++) 
+        {
+            $information=explode('=',$decryptValues[$i]);
+            if($i==0)
+            $form_memo=$information[1];
+            if($i==1)
+            $tracking_id=$information[1];
+            if($i==2)
+            $bank_ref_no=$information[1];
+            if($i==3)	
+            $order_status=$information[1];
+            if($i==5)
+            $payment_mode=$information[1];
+            if($i==6)
+            $card_name=$information[1];
+            if($i==9)
+            $currency=$information[1];
+            if($i==10)
+            $amount=$information[1];
+            if($i==11)
+            $billing_name=$information[1];
+            if($i==34)
+            $discount_value=$information[1];
+            if($i==35)
+            $mer_amount=$information[1];
+            if($i==40)
+            $trans_date=$information[1];
+        } 
+
+
+
+        if (App::environment('local')) {           
+
+            $tracker = new Tracker;
+            $tracker->encrypted_data = $enc_request;
+            $tracker->encResponse = $encResponse;
+            $tracker->rcvdString= $rcvdString;
+            $tracker->decryptValues= $decryptValues;
+            $tracker->save();
+        }
+
+        //  dd($decryptValues);
+        if($order_status == "Aborted")
+        {
+
+            $form = Form::where('memo', $form_memo)->first();
+            return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form->id); 
+
+        }
+
+        if($order_status == "Success")
+        {
+            $payment = new Payment;
+            $payment->order_id = $form_memo;
+            $payment->tracking_id = $tracking_id;
+            $payment->bank_ref_no = $bank_ref_no;
+            $payment->order_status = $order_status;
+            $payment->payment_mode = $payment_mode;
+            $payment->card_name = $card_name;
+            $payment->currency = $currency;
+            $payment->amount = $amount;
+            $payment->billing_name = $billing_name;
+            $payment->discount_value = $discount_value;
+            $payment->mer_amount = $mer_amount;
+            $payment->trans_date = $trans_date;
+            $payment->form_memo = $form_memo;
+            $payment->payment_status = $order_status;  //if payment_status ==1 then payment is successful
+            $payment->save();
+
+            // $data = DB::table('buy_card_transactions')->where(array('transaction_id' => $key))->first();
+            // $form = DB::table('forms')->where('memo',$form_id)->update(['track_status' => 5]);
+            $form = Form::where('memo', $form_memo)->first();
+            $form1 = Form::findOrFail($form->id);
+            $form1->track_status = 5;
+            $form1->payment_id = $payment->id;
+            $form1->save();
+
+             
+             $estimate1 = DB::table('estimates')->where('form_memo',$form_memo)->update(['estimate_status'=>2]);
+            // $estimate=Estimate::where('form_memo', $form_memo)->first();
+            // $estimate->status=2;
+            // $estimate->save();
+
+            $grant = new Grant;
+            $grant->form_memo = $form_memo;
+            $grant->form_id = $form->id;
+            $grant->grant_status = 0;
+            $grant->validity = 0;
+            $grant->division_id = $form->division_id;
+            $grant->save();
+
+            $form1->grant_id = $grant->id;
+            $form1->save();
+        }
+
+        else{
+
+            $payment = new Payment;
+            $payment->order_id = $form_memo;
+            $payment->tracking_id = $tracking_id;
+            $payment->bank_ref_no = $bank_ref_no;
+            $payment->order_status = $order_status;
+            $payment->payment_mode = $payment_mode;
+            $payment->card_name = $card_name;
+            $payment->currency = $currency;
+            $payment->amount = $amount;
+            $payment->billing_name = $billing_name;
+            $payment->discount_value = $discount_value;
+            $payment->mer_amount = $mer_amount;
+            $payment->trans_date = $trans_date;
+            $payment->form_memo = $form_memo;
+            $payment->payment_status = $order_status;  //if payment_status ==1 then payment is successful
+            $payment->save();
+
+         
+
+
+
+            $form = Form::where('memo', $form_memo)->first();
+
+            $form1 = Form::findOrFail($form->id);
+            $form1->track_status = 55;
+            $form1->payment_id = $payment->id;
+            $form1->save();
+
+
+        }
+
+
+
+         if (App::environment('local')) {
+            return \Redirect::to('http://localhost:8000/paymentHandler/'.$form1->id);  
+         }
+
+       
+        return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentHandler/'.$form1->id);                     
+    //    return response()->json([
+    //        "rcvdString" => $rcvdString,
+    //    ], 201);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Payment  $payment
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Payment $payment)
+    {
+        //
+    }
+
+    public function apiTest(Request $request)
+    {
+
+        error_reporting(0);
+
+	function encrypt2($plainText,$key)
+	{
+		$key = hextobin(md5($key));
+		$initVector = pack("C*", 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f);
+		$openMode = openssl_encrypt($plainText, 'AES-128-CBC', $key, OPENSSL_RAW_DATA, $initVector);
+		$encryptedText = bin2hex($openMode);
+		return $encryptedText;
+	}
+
+	function decrypt2($encryptedText,$key)
+	{
+		$key = hextobin(md5($key));
+		$initVector = pack("C*", 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f);
+		$encryptedText = hextobin($encryptedText);
+		$decryptedText = openssl_decrypt($encryptedText, 'AES-128-CBC', $key, OPENSSL_RAW_DATA, $initVector);
+		return $decryptedText;
+	}
+	//*********** Padding Function *********************
+
+	 function pkcs5_pad ($plainText, $blockSize)
+	{
+	    $pad = $blockSize - (strlen($plainText) % $blockSize);
+	    return $plainText . str_repeat(chr($pad), $pad);
+	}
+
+	//********** Hexadecimal to Binary function for php 4.0 version ********
+
+	function hextobin($hexString) 
+   	 { 
+        	$length = strlen($hexString); 
+        	$binString="";   
+        	$count=0; 
+        	while($count<$length) 
+        	{       
+        	    $subString =substr($hexString,$count,2);           
+        	    $packedString = pack("H*",$subString); 
+        	    if ($count==0)
+		    {
+				$binString=$packedString;
+		    } 
+        	    
+		    else 
+		    {
+				$binString.=$packedString;
+		    } 
+        	    
+		    $count+=2; 
+        	} 
+  	        return $binString; 
+    	  } error_reporting(0);
+
+	function encrypt($plainText,$key)
+	{
+		$key = hextobin(md5($key));
+		$initVector = pack("C*", 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f);
+		$openMode = openssl_encrypt($plainText, 'AES-128-CBC', $key, OPENSSL_RAW_DATA, $initVector);
+		$encryptedText = bin2hex($openMode);
+		return $encryptedText;
+	}
+
+	function decrypt($encryptedText,$key)
+	{
+		$key = hextobin(md5($key));
+		$initVector = pack("C*", 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f);
+		$encryptedText = hextobin($encryptedText);
+		$decryptedText = openssl_decrypt($encryptedText, 'AES-128-CBC', $key, OPENSSL_RAW_DATA, $initVector);
+		return $decryptedText;
+	}
+	//*********** Padding Function *********************
+
+	 function pkcs5_pad ($plainText, $blockSize)
+	{
+	    $pad = $blockSize - (strlen($plainText) % $blockSize);
+	    return $plainText . str_repeat(chr($pad), $pad);
+	}
+
+	//********** Hexadecimal to Binary function for php 4.0 version ********
+
+	function hextobin($hexString) 
+   	 { 
+        	$length = strlen($hexString); 
+        	$binString="";   
+        	$count=0; 
+        	while($count<$length) 
+        	{       
+        	    $subString =substr($hexString,$count,2);           
+        	    $packedString = pack("H*",$subString); 
+        	    if ($count==0)
+		    {
+				$binString=$packedString;
+		    } 
+        	    
+		    else 
+		    {
+				$binString.=$packedString;
+		    } 
+        	    
+		    $count+=2; 
+        	} 
+  	        return $binString; 
+    	} 
+  
+        $working_key = ''; //Shared by CCAVENUES
+        $access_code = '';
+
+        $merchant_json_data =
+                    array(
+                            'order_no' => $request->order_no,
+	                        'reference_no' => $request->reference_no,
+                        );
+            $merchant_data = json_encode($merchant_json_data);
+            $encrypted_data = encrypt1($merchant_data, $working_key);
+            $final_data = 'enc_request='.$encrypted_data.'&access_code='.$access_code.'&command=orderStatusTracker&request_type=JSON&response_type=JSON';
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, "https://apitest.ccavenue.com/apis/servlet/DoWebTrans");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_VERBOSE, 1);
+            curl_setopt($ch, CURLOPT_HTTPHEADER,'Content-Type: application/json') ;
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $final_data);
+            // Get server response ...
+            $result = curl_exec($ch);
+            curl_close($ch);
+            $status = '';
+            $information = explode('&', $result);
+
+            $dataSize = sizeof($information);
+            for ($i = 0; $i < $dataSize; $i++) {
+                $info_value = explode('=', $information[$i]);
+                if ($info_value[0] == 'enc_response') {
+                $status = decrypt1(trim($info_value[1]), $working_key);
+                
+                }
+            }
+
+
+            echo 'Status revert is: ' . $status.'<pre>';
+            $obj = json_decode($status);
+            print_r($obj);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Payment  $payment
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Payment $payment)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Payment  $payment
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Payment $payment)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Payment  $payment
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Payment $payment)
+    {
+        //
+    }
+}
