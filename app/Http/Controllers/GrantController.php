@@ -230,77 +230,77 @@ class GrantController extends Controller
 
                  // SMS 5
 
-                //  try {
+                 try {
 
-                //     $client = new Client();
-                //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-                //       'form_params' => [
-                //           'api_key' => env('SMS_API_KEY'),
-                //           'number' => $form->phone,
-                //           'message' =>'Memo No: '.$form->memo.', Permission Granted for Road Cutting, Valid till: '.$grant->validity.' .DoICT',
-                //           'template_id'=>'1007185925158604160',
-                //           // 'number' => $phone_number,
-                //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-                //       ]
-                //   ]);
+                    $client = new Client();
+                    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+                      'form_params' => [
+                          'api_key' => env('SMS_API_KEY'),
+                          'number' => $form->phone,
+                          'message' =>'Memo No: '.$form->memo.', Permission Granted for Road Cutting, Valid till: '.$grant->validity.' .DoICT',
+                          'template_id'=>'1007185925158604160',
+                          // 'number' => $phone_number,
+                          // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+                      ]
+                  ]);
 
-                //   } catch (\Exception $e) {
+                  } catch (\Exception $e) {
 
-                //       return $e->getMessage();
-                //   }
+                      return $e->getMessage();
+                  }
 
 
                 //   // SMS to SDO and EE
 
-                //   try {
+                  try {
 
-                //     $phoneNumbers = DB::table('users')->where('division_id', $grant->division_id )->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+                    $phoneNumbers = DB::table('users')->where('division_id', $grant->division_id )->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-                //     $client = new Client();
-                //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-                //       'form_params' => [
-                //           'api_key' => env('SMS_API_KEY'),
-                //           'number' => $phoneNumbers,
-                //           'message' =>'EE has granted permission for Memo: '.$form->memo.', '.$form->name.', '.$var1.', Div: '.$div.'. Sub: '.$sub.'. DoICT',
-                //           'template_id'=>'1007880438505280942',
-                //         //   'message' =>'Memo No: '.$form->memo.', Permission Granted for Road Cutting, Valid till: '.$grant->validity.' .DoICT',
-                //         //   'template_id'=>'1007185925158604160',
-                //           // 'number' => $phone_number,
-                //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-                //       ]
-                //   ]);
+                    $client = new Client();
+                    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+                      'form_params' => [
+                          'api_key' => env('SMS_API_KEY'),
+                          'number' => $phoneNumbers,
+                          'message' =>'EE has granted permission for Memo: '.$form->memo.', '.$form->name.', '.$var1.', Div: '.$div.'. Sub: '.$sub.'. DoICT',
+                          'template_id'=>'1007880438505280942',
+                        //   'message' =>'Memo No: '.$form->memo.', Permission Granted for Road Cutting, Valid till: '.$grant->validity.' .DoICT',
+                        //   'template_id'=>'1007185925158604160',
+                          // 'number' => $phone_number,
+                          // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+                      ]
+                  ]);
 
-                //   } catch (\Exception $e) {
+                  } catch (\Exception $e) {
 
-                //       return $e->getMessage();
-                //   }
+                      return $e->getMessage();
+                  }
 
 
                 //   //SMS to JE or SA
 
 
-                //   try {
+                  try {
 
-                //     $phoneNumbers = DB::table('engineers')->where('division_id', $grant->division_id )->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+                    $phoneNumbers = DB::table('engineers')->where('division_id', $grant->division_id )->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-                //     $client = new Client();
-                //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-                //       'form_params' => [
-                //           'api_key' => env('SMS_API_KEY'),
-                //           'number' => $phoneNumbers,
-                //           'message' =>'EE has granted permission for Memo: '.$form->memo.', '.$form->name.', '.$var1.', Div: '.$div.'. Sub: '.$sub.'. DoICT',
-                //           'template_id'=>'1007880438505280942',
-                //         //   'message' =>'Memo No: '.$form->memo.', Permission Granted for Road Cutting, Valid till: '.$grant->validity.' .DoICT',
-                //         //   'template_id'=>'1007185925158604160',
-                //           // 'number' => $phone_number,
-                //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-                //       ]
-                //   ]);
+                    $client = new Client();
+                    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+                      'form_params' => [
+                          'api_key' => env('SMS_API_KEY'),
+                          'number' => $phoneNumbers,
+                          'message' =>'EE has granted permission for Memo: '.$form->memo.', '.$form->name.', '.$var1.', Div: '.$div.'. Sub: '.$sub.'. DoICT',
+                          'template_id'=>'1007880438505280942',
+                        //   'message' =>'Memo No: '.$form->memo.', Permission Granted for Road Cutting, Valid till: '.$grant->validity.' .DoICT',
+                        //   'template_id'=>'1007185925158604160',
+                          // 'number' => $phone_number,
+                          // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+                      ]
+                  ]);
 
-                //   } catch (\Exception $e) {
+                  } catch (\Exception $e) {
 
-                //       return $e->getMessage();
-                //   }
+                      return $e->getMessage();
+                  }
 
 
 

@@ -234,28 +234,28 @@ class EstimateController extends Controller
             $form->save();
 
  // uncomment after start
-            // try {
+            try {
 
-            //     $var1=$form->memo.", Road Name: ".$estimate->road_name.", Road Type: ".$estimate->road_type;
+                $var1=$form->memo.", Road Name: ".$estimate->road_name.", Road Type: ".$estimate->road_type;
 
-            //     $phoneNumbers = DB::table('users')->where('division_id', $form->division_id )->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+                $phoneNumbers = DB::table('users')->where('division_id', $form->division_id )->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-            //     $client = new Client();
-            //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-            //       'form_params' => [
-            //           'api_key' => env('SMS_API_KEY'),
-            //           'number' => $phoneNumbers,
-            //           'message' =>'Memo: '.$var1.', SDO has submitted Roadcutting Estimate to EE .DoICT',
-            //           'template_id'=>'1007442804569166348',
-            //           // 'number' => $phone_number,
-            //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-            //       ]
-            //   ]);
+                $client = new Client();
+                $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+                  'form_params' => [
+                      'api_key' => env('SMS_API_KEY'),
+                      'number' => $phoneNumbers,
+                      'message' =>'Memo: '.$var1.', SDO has submitted Roadcutting Estimate to EE .DoICT',
+                      'template_id'=>'1007442804569166348',
+                      // 'number' => $phone_number,
+                      // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+                  ]
+              ]);
 
-            //   } catch (\Exception $e) {
+              } catch (\Exception $e) {
 
-            //       return $e->getMessage();
-            //   }
+                  return $e->getMessage();
+              }
 // uncomment after start
 
             // response

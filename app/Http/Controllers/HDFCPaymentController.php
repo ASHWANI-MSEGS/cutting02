@@ -121,7 +121,7 @@ class HDFCPaymentController extends Controller
         error_reporting(0);
 
 
-info($request."               starting request");
+
         // $merchant_data=' ';
 
         $form= Form::findOrFail($request->billing_notes);
@@ -462,46 +462,46 @@ info($request."               starting request");
                 $form1->save();
 // commenting originnal for testing start
                 //SMS 6
-            //        try {
+                   try {
 
-            //      $client = new Client();
-            //      $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-            //        'form_params' => [
-            //            'api_key' => env('SMS_API_KEY'),
-            //            'number' => $form1->phone,
-            //            'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-            //            'template_id'=>'3214321',
-            //            // 'number' => $phone_number,
-            //            // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-            //        ]
-            //    ]);
+                 $client = new Client();
+                 $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+                   'form_params' => [
+                       'api_key' => env('SMS_API_KEY'),
+                       'number' => $form1->phone,
+                       'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                       'template_id'=>'3214321',
+                       // 'number' => $phone_number,
+                       // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+                   ]
+               ]);
 
-            //    } catch (\Exception $e) {
+               } catch (\Exception $e) {
 
-            //        return $e->getMessage();
-            //    }
+                   return $e->getMessage();
+               }
 
-            //     //SMS to EE after successful payment
+                //SMS to EE after successful payment
 
-            //     try {
+                try {
 
-            //     $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+                $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-            //     $client = new Client();
-            //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-            //         'form_params' => [
-            //             'api_key' => env('SMS_API_KEY'),
-            //             'number' => $phoneNumbers,
-            //             'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-            //             'template_id'=>'1007431101812136669',
+                $client = new Client();
+                $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+                    'form_params' => [
+                        'api_key' => env('SMS_API_KEY'),
+                        'number' => $phoneNumbers,
+                        'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                        'template_id'=>'1007431101812136669',
 
-            //         ]
-            //     ]);
+                    ]
+                ]);
 
-            //     } catch (\Exception $e) {
+                } catch (\Exception $e) {
 
 
-            //     }
+                }
 // commenting originnal for testing end
             }
 
@@ -722,47 +722,47 @@ info($request."               starting request");
              $form1->grant_id = $grant->id;
              $form1->save();
 // commenting for testing original code start
-             //SMS 6
-            //  try {
+            //  SMS 6
+             try {
 
-            //      $client = new Client();
-            //      $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-            //        'form_params' => [
-            //            'api_key' => env('SMS_API_KEY'),
-            //            'number' => $form1->phone,
-            //            'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-            //            'template_id'=>'3214321',
-            //            // 'number' => $phone_number,
-            //            // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-            //        ]
-            //    ]);
+                 $client = new Client();
+                 $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+                   'form_params' => [
+                       'api_key' => env('SMS_API_KEY'),
+                       'number' => $form1->phone,
+                       'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                       'template_id'=>'3214321',
+                       // 'number' => $phone_number,
+                       // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+                   ]
+               ]);
 
-            //    } catch (\Exception $e) {
+               } catch (\Exception $e) {
 
-            //        return $e->getMessage();
-            //    }
+                   return $e->getMessage();
+               }
 
-            //     //SMS to EE after successful payment
+                //SMS to EE after successful payment
 
-            //     try {
+                try {
 
-            //     $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+                $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-            //     $client = new Client();
-            //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-            //         'form_params' => [
-            //             'api_key' => env('SMS_API_KEY'),
-            //             'number' => $phoneNumbers,
-            //             'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-            //             'template_id'=>'1007431101812136669',
+                $client = new Client();
+                $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+                    'form_params' => [
+                        'api_key' => env('SMS_API_KEY'),
+                        'number' => $phoneNumbers,
+                        'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                        'template_id'=>'1007431101812136669',
 
-            //         ]
-            //     ]);
+                    ]
+                ]);
 
-            //     } catch (\Exception $e) {
+                } catch (\Exception $e) {
 
 
-            //     }
+                }
 // commenting for testing original code start
          }
 
@@ -980,46 +980,46 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
 
         // commenting for testing original code start
         //SMS 6
-        // try {
+        try {
 
-        //     $client = new Client();
-        //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //       'form_params' => [
-        //           'api_key' => env('SMS_API_KEY'),
-        //           'number' => $form1->phone,
-        //           'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-        //           'template_id'=>'3214321',
-        //           // 'number' => $phone_number,
-        //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-        //       ]
-        //   ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $form1->phone,
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'3214321',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-        //   } catch (\Exception $e) {
+          } catch (\Exception $e) {
 
-        //       return $e->getMessage();
-        //   }
+              return $e->getMessage();
+          }
 
-        //    //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-        //    try {
+           try {
 
-        //    $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-        //    $client = new Client();
-        //    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //        'form_params' => [
-        //            'api_key' => env('SMS_API_KEY'),
-        //            'number' => $phoneNumbers,
-        //            'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-        //            'template_id'=>'1007431101812136669',
+           $client = new Client();
+           $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-        //        ]
-        //    ]);
+               ]
+           ]);
 
-        //    } catch (\Exception $e) {
+           } catch (\Exception $e) {
 
 
-        //    }
+           }
 // commenting for testing original code end
 
     }
@@ -1238,46 +1238,46 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
 
         // commenting for testing original code start
         //SMS 6
-        // try {
+        try {
 
-        //     $client = new Client();
-        //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //       'form_params' => [
-        //           'api_key' => env('SMS_API_KEY'),
-        //           'number' => $form1->phone,
-        //           'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-        //           'template_id'=>'3214321',
-        //           // 'number' => $phone_number,
-        //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-        //       ]
-        //   ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $form1->phone,
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'3214321',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-        //   } catch (\Exception $e) {
+          } catch (\Exception $e) {
 
-        //       return $e->getMessage();
-        //   }
+              return $e->getMessage();
+          }
 
-        //    //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-        //    try {
+           try {
 
-        //    $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-        //    $client = new Client();
-        //    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //        'form_params' => [
-        //            'api_key' => env('SMS_API_KEY'),
-        //            'number' => $phoneNumbers,
-        //            'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-        //            'template_id'=>'1007431101812136669',
+           $client = new Client();
+           $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-        //        ]
-        //    ]);
+               ]
+           ]);
 
-        //    } catch (\Exception $e) {
+           } catch (\Exception $e) {
 
 
-        //    }
+           }
 // commenting for testing original code end
 
     }
@@ -1494,48 +1494,48 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $form1->grant_id = $grant->id;
         $form1->save();
 //// commenting for testing original code start
-        //SMS 6
-        // try {
+        // SMS 6
+        try {
 
-        //     $client = new Client();
-        //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //       'form_params' => [
-        //           'api_key' => env('SMS_API_KEY'),
-        //           'number' => $form1->phone,
-        //           'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-        //           'template_id'=>'3214321',
-        //           // 'number' => $phone_number,
-        //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-        //       ]
-        //   ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $form1->phone,
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'3214321',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-        //   } catch (\Exception $e) {
+          } catch (\Exception $e) {
 
-        //       return $e->getMessage();
-        //   }
+              return $e->getMessage();
+          }
 
-        //    //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-        //    try {
+           try {
 
-        //    $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-        //    $client = new Client();
-        //    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //        'form_params' => [
-        //            'api_key' => env('SMS_API_KEY'),
-        //            'number' => $phoneNumbers,
-        //            'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-        //            'template_id'=>'1007431101812136669',
+           $client = new Client();
+           $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-        //        ]
-        //    ]);
+               ]
+           ]);
 
-        //    } catch (\Exception $e) {
+           } catch (\Exception $e) {
 
 
-        //    }
-      //  commenting for testing original code end
+           }
+    //    commenting for testing original code end
     }
 
     else{
@@ -1752,46 +1752,46 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $form1->save();
 // comment start
         ////SMS 6
-        // try {
+        try {
 
-        //     $client = new Client();
-        //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //       'form_params' => [
-        //           'api_key' => env('SMS_API_KEY'),
-        //           'number' => $form1->phone,
-        //           'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-        //           'template_id'=>'3214321',
-        //           // 'number' => $phone_number,
-        //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-        //       ]
-        //   ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $form1->phone,
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'3214321',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-        //   } catch (\Exception $e) {
+          } catch (\Exception $e) {
 
-        //       return $e->getMessage();
-        //   }
+              return $e->getMessage();
+          }
 
-        //    //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-        //    try {
+           try {
 
-        //    $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-        //    $client = new Client();
-        //    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //        'form_params' => [
-        //            'api_key' => env('SMS_API_KEY'),
-        //            'number' => $phoneNumbers,
-        //            'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-        //            'template_id'=>'1007431101812136669',
+           $client = new Client();
+           $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-        //        ]
-        //    ]);
+               ]
+           ]);
 
-        //    } catch (\Exception $e) {
+           } catch (\Exception $e) {
 
 
-        //    }
+           }
 // comment end
 
     }
@@ -2009,46 +2009,46 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $form1->save();
 // comment start
         ////SMS 6
-        // try {
+        try {
 
-        //     $client = new Client();
-        //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //       'form_params' => [
-        //           'api_key' => env('SMS_API_KEY'),
-        //           'number' => $form1->phone,
-        //           'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-        //           'template_id'=>'3214321',
-        //           // 'number' => $phone_number,
-        //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-        //       ]
-        //   ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $form1->phone,
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'3214321',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-        //   } catch (\Exception $e) {
+          } catch (\Exception $e) {
 
-        //       return $e->getMessage();
-        //   }
+              return $e->getMessage();
+          }
 
-        //    //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-        //    try {
+           try {
 
-        //    $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-        //    $client = new Client();
-        //    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //        'form_params' => [
-        //            'api_key' => env('SMS_API_KEY'),
-        //            'number' => $phoneNumbers,
-        //            'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-        //            'template_id'=>'1007431101812136669',
+           $client = new Client();
+           $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-        //        ]
-        //    ]);
+               ]
+           ]);
 
-        //    } catch (\Exception $e) {
+           } catch (\Exception $e) {
 
 
-        //    }
+           }
 // comment end
 
 
@@ -2267,46 +2267,46 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $form1->save();
 // comment start
         ////SMS 6
-        // try {
+        try {
 
-        //     $client = new Client();
-        //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //       'form_params' => [
-        //           'api_key' => env('SMS_API_KEY'),
-        //           'number' => $form1->phone,
-        //           'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-        //           'template_id'=>'3214321',
-        //           // 'number' => $phone_number,
-        //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-        //       ]
-        //   ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $form1->phone,
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'3214321',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-        //   } catch (\Exception $e) {
+          } catch (\Exception $e) {
 
-        //       return $e->getMessage();
-        //   }
+              return $e->getMessage();
+          }
 
-        //    //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-        //    try {
+           try {
 
-        //    $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-        //    $client = new Client();
-        //    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //        'form_params' => [
-        //            'api_key' => env('SMS_API_KEY'),
-        //            'number' => $phoneNumbers,
-        //            'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-        //            'template_id'=>'1007431101812136669',
+           $client = new Client();
+           $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-        //        ]
-        //    ]);
+               ]
+           ]);
 
-        //    } catch (\Exception $e) {
+           } catch (\Exception $e) {
 
 
-        //    }
+           }
 // comment end
     }
 
@@ -2523,46 +2523,46 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $form1->save();
 // comment start
         ////SMS 6
-        // try {
+        try {
 
-        //     $client = new Client();
-        //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //       'form_params' => [
-        //           'api_key' => env('SMS_API_KEY'),
-        //           'number' => $form1->phone,
-        //           'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-        //           'template_id'=>'3214321',
-        //           // 'number' => $phone_number,
-        //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-        //       ]
-        //   ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $form1->phone,
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'3214321',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-        //   } catch (\Exception $e) {
+          } catch (\Exception $e) {
 
-        //       return $e->getMessage();
-        //   }
+              return $e->getMessage();
+          }
 
-        //    //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-        //    try {
+           try {
 
-        //    $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-        //    $client = new Client();
-        //    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //        'form_params' => [
-        //            'api_key' => env('SMS_API_KEY'),
-        //            'number' => $phoneNumbers,
-        //            'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-        //            'template_id'=>'1007431101812136669',
+           $client = new Client();
+           $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-        //        ]
-        //    ]);
+               ]
+           ]);
 
-        //    } catch (\Exception $e) {
+           } catch (\Exception $e) {
 
 
-        //    }
+           }
 // comment end
     }
 
@@ -2779,46 +2779,46 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
 // comment start
 
         ////SMS 6
-        // try {
+        try {
 
-        //     $client = new Client();
-        //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //       'form_params' => [
-        //           'api_key' => env('SMS_API_KEY'),
-        //           'number' => $form1->phone,
-        //           'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-        //           'template_id'=>'3214321',
-        //           // 'number' => $phone_number,
-        //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-        //       ]
-        //   ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $form1->phone,
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'3214321',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-        //   } catch (\Exception $e) {
+          } catch (\Exception $e) {
 
-        //       return $e->getMessage();
-        //   }
+              return $e->getMessage();
+          }
 
-        //    //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-        //    try {
+           try {
 
-        //    $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-        //    $client = new Client();
-        //    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //        'form_params' => [
-        //            'api_key' => env('SMS_API_KEY'),
-        //            'number' => $phoneNumbers,
-        //            'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-        //            'template_id'=>'1007431101812136669',
+           $client = new Client();
+           $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-        //        ]
-        //    ]);
+               ]
+           ]);
 
-        //    } catch (\Exception $e) {
+           } catch (\Exception $e) {
 
 
-        //    }
+           }
 // comment end
 
     }
@@ -3037,46 +3037,46 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
 // comment start
 
         ////SMS 6
-        // try {
+        try {
 
-        //     $client = new Client();
-        //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //       'form_params' => [
-        //           'api_key' => env('SMS_API_KEY'),
-        //           'number' => $form1->phone,
-        //           'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-        //           'template_id'=>'3214321',
-        //           // 'number' => $phone_number,
-        //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-        //       ]
-        //   ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $form1->phone,
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'3214321',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-        //   } catch (\Exception $e) {
+          } catch (\Exception $e) {
 
-        //       return $e->getMessage();
-        //   }
+              return $e->getMessage();
+          }
 
-        //    //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-        //    try {
+           try {
 
-        //    $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-        //    $client = new Client();
-        //    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //        'form_params' => [
-        //            'api_key' => env('SMS_API_KEY'),
-        //            'number' => $phoneNumbers,
-        //            'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-        //            'template_id'=>'1007431101812136669',
+           $client = new Client();
+           $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-        //        ]
-        //    ]);
+               ]
+           ]);
 
-        //    } catch (\Exception $e) {
+           } catch (\Exception $e) {
 
 
-        //    }
+           }
 // comment end
 
 
@@ -3297,46 +3297,46 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
 // comment start
 
         ////SMS 6
-        // try {
+        try {
 
-        //     $client = new Client();
-        //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //       'form_params' => [
-        //           'api_key' => env('SMS_API_KEY'),
-        //           'number' => $form1->phone,
-        //           'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-        //           'template_id'=>'3214321',
-        //           // 'number' => $phone_number,
-        //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-        //       ]
-        //   ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $form1->phone,
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'3214321',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-        //   } catch (\Exception $e) {
+          } catch (\Exception $e) {
 
-        //       return $e->getMessage();
-        //   }
+              return $e->getMessage();
+          }
 
-        //    //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-        //    try {
+           try {
 
-        //    $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-        //    $client = new Client();
-        //    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //        'form_params' => [
-        //            'api_key' => env('SMS_API_KEY'),
-        //            'number' => $phoneNumbers,
-        //            'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-        //            'template_id'=>'1007431101812136669',
+           $client = new Client();
+           $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-        //        ]
-        //    ]);
+               ]
+           ]);
 
-        //    } catch (\Exception $e) {
+           } catch (\Exception $e) {
 
 
-        //    }
+           }
 // comment end
 
     }
@@ -3554,46 +3554,46 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
 // comment start
 
         ////SMS 6
-        // try {
+        try {
 
-        //     $client = new Client();
-        //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //       'form_params' => [
-        //           'api_key' => env('SMS_API_KEY'),
-        //           'number' => $form1->phone,
-        //           'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-        //           'template_id'=>'3214321',
-        //           // 'number' => $phone_number,
-        //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-        //       ]
-        //   ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $form1->phone,
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'3214321',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-        //   } catch (\Exception $e) {
+          } catch (\Exception $e) {
 
-        //       return $e->getMessage();
-        //   }
+              return $e->getMessage();
+          }
 
-        //    //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-        //    try {
+           try {
 
-        //    $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-        //    $client = new Client();
-        //    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //        'form_params' => [
-        //            'api_key' => env('SMS_API_KEY'),
-        //            'number' => $phoneNumbers,
-        //            'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-        //            'template_id'=>'1007431101812136669',
+           $client = new Client();
+           $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-        //        ]
-        //    ]);
+               ]
+           ]);
 
-        //    } catch (\Exception $e) {
+           } catch (\Exception $e) {
 
 
-        //    }
+           }
 // comment eend
 
     }
@@ -3812,46 +3812,47 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
 
         // commenting for testing original code start
         //SMS 6
-        // try {
+        try {
 
-        //     $client = new Client();
-        //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //       'form_params' => [
-        //           'api_key' => env('SMS_API_KEY'),
-        //           'number' => $form1->phone,
-        //           'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-        //           'template_id'=>'3214321',
-        //           // 'number' => $phone_number,
-        //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-        //       ]
-        //   ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $form1->phone,
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'3214321',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-        //   } catch (\Exception $e) {
+          }
+          catch (\Exception $e) {
 
-        //       return $e->getMessage();
-        //   }
+              return $e->getMessage();
+          }
 
-        //    //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-        //    try {
+           try {
 
-        //    $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-        //    $client = new Client();
-        //    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //        'form_params' => [
-        //            'api_key' => env('SMS_API_KEY'),
-        //            'number' => $phoneNumbers,
-        //            'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-        //            'template_id'=>'1007431101812136669',
+           $client = new Client();
+           $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-        //        ]
-        //    ]);
+               ]
+           ]);
 
-        //    } catch (\Exception $e) {
+           } catch (\Exception $e) {
 
 
-        //    }
+           }
 // commenting for testing original code end
 
     }
@@ -4069,46 +4070,46 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
 
         // commenting for testing original code start
         //SMS 6
-        // try {
+        try {
 
-        //     $client = new Client();
-        //     $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //       'form_params' => [
-        //           'api_key' => env('SMS_API_KEY'),
-        //           'number' => $form1->phone,
-        //           'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-        //           'template_id'=>'3214321',
-        //           // 'number' => $phone_number,
-        //           // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-        //       ]
-        //   ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $form1->phone,
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'3214321',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-        //   } catch (\Exception $e) {
+          } catch (\Exception $e) {
 
-        //       return $e->getMessage();
-        //   }
+              return $e->getMessage();
+          }
 
-        //    //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-        //    try {
+           try {
 
-        //    $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-        //    $client = new Client();
-        //    $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-        //        'form_params' => [
-        //            'api_key' => env('SMS_API_KEY'),
-        //            'number' => $phoneNumbers,
-        //            'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-        //            'template_id'=>'1007431101812136669',
+           $client = new Client();
+           $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-        //        ]
-        //    ]);
+               ]
+           ]);
 
-        //    } catch (\Exception $e) {
+           } catch (\Exception $e) {
 
 
-        //    }
+           }
 // commenting for testing original code end
 
     }
@@ -4253,46 +4254,46 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
          $form1->save();
 
 //          //SMS 6
-//          try {
-// // UNCOMMENT IT WHEN YOU ARE GONNA LIVE
-//              $client = new Client ();
-//              $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-//                'form_params' => [
-//                    'api_key' => env('SMS_API_KEY'),
-//                    'number' => $form1->phone,
-//                    'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-//                    'template_id'=>'1007856011249564657',
-//                    // 'number' => $phone_number,
-//                    // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-//                ]
-//            ]);
-// // UNCOMMENT IT WHEN YOU ARE GONNA LIVE
-//            } catch (\Exception $e) {
+         try {
+// UNCOMMENT IT WHEN YOU ARE GONNA LIVE
+             $client = new Client ();
+             $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $form1->phone,
+                   'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                   'template_id'=>'1007856011249564657',
+                   // 'number' => $phone_number,
+                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+               ]
+           ]);
+// UNCOMMENT IT WHEN YOU ARE GONNA LIVE
+           } catch (\Exception $e) {
 
-//                return $e->getMessage();
-//            }
+               return $e->getMessage();
+           }
 
-//            //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-//            try {
-// // UNCOMMENT IT WHEN YOU ARE GONNA LIVE
-//              $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           try {
+// UNCOMMENT IT WHEN YOU ARE GONNA LIVE
+             $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-//              $client = new Client();
-//              $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-//                'form_params' => [
-//                    'api_key' => env('SMS_API_KEY'),
-//                    'number' => $phoneNumbers,
-//                    'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-//                    'template_id'=>'1007431101812136669',
+             $client = new Client();
+             $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-//                ]
-//            ]);
-// // UNCOMMENT IT WHEN YOU ARE GONNA LIVE
-//            } catch (\Exception $e) {
+               ]
+           ]);
+// UNCOMMENT IT WHEN YOU ARE GONNA LIVE
+           } catch (\Exception $e) {
 
-//             return $e->getMessage();
-//            }
+            return $e->getMessage();
+           }
 
            return response()->json([
             "paymentUpdate" => $paymentUpdate
@@ -4381,46 +4382,46 @@ public function manualOnlinePaymentRTGS(Request $request)
          $form1->save();
 
 //          //SMS 6
-//          try {
-// // UNCOMMENT IT WHEN YOU ARE GONNA LIVE
-//              $client = new Client ();
-//              $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-//                'form_params' => [
-//                    'api_key' => env('SMS_API_KEY'),
-//                    'number' => $form1->phone,
-//                    'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-//                    'template_id'=>'1007856011249564657',
-//                    // 'number' => $phone_number,
-//                    // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-//                ]
-//            ]);
-// // UNCOMMENT IT WHEN YOU ARE GONNA LIVE
-//            } catch (\Exception $e) {
+         try {
+// UNCOMMENT IT WHEN YOU ARE GONNA LIVE
+             $client = new Client ();
+             $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $form1->phone,
+                   'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                   'template_id'=>'1007856011249564657',
+                   // 'number' => $phone_number,
+                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+               ]
+           ]);
+// UNCOMMENT IT WHEN YOU ARE GONNA LIVE
+           } catch (\Exception $e) {
 
-//                return $e->getMessage();
-//            }
+               return $e->getMessage();
+           }
 
-//            //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-//            try {
-// // UNCOMMENT IT WHEN YOU ARE GONNA LIVE
-//              $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           try {
+// UNCOMMENT IT WHEN YOU ARE GONNA LIVE
+             $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-//              $client = new Client();
-//              $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-//                'form_params' => [
-//                    'api_key' => env('SMS_API_KEY'),
-//                    'number' => $phoneNumbers,
-//                    'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-//                    'template_id'=>'1007431101812136669',
+             $client = new Client();
+             $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-//                ]
-//            ]);
-// // UNCOMMENT IT WHEN YOU ARE GONNA LIVE
-//            } catch (\Exception $e) {
+               ]
+           ]);
+// UNCOMMENT IT WHEN YOU ARE GONNA LIVE
+           } catch (\Exception $e) {
 
-//             return $e->getMessage();
-//            }
+            return $e->getMessage();
+           }
 
            return response()->json([
             "paymentUpdate" => $paymentUpdate
@@ -4516,46 +4517,46 @@ public function manualOnlinePaymentCash(Request $request)
          $form1->save();
 
 //          //SMS 6
-//          try {
-// // UNCOMMENT IT WHEN YOU ARE GONNA LIVE
-//              $client = new Client ();
-//              $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-//                'form_params' => [
-//                    'api_key' => env('SMS_API_KEY'),
-//                    'number' => $form1->phone,
-//                    'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
-//                    'template_id'=>'1007856011249564657',
-//                    // 'number' => $phone_number,
-//                    // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-//                ]
-//            ]);
-// // UNCOMMENT IT WHEN YOU ARE GONNA LIVE
-//            } catch (\Exception $e) {
+         try {
+// UNCOMMENT IT WHEN YOU ARE GONNA LIVE
+             $client = new Client ();
+             $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $form1->phone,
+                   'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                   'template_id'=>'1007856011249564657',
+                   // 'number' => $phone_number,
+                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+               ]
+           ]);
+// UNCOMMENT IT WHEN YOU ARE GONNA LIVE
+           } catch (\Exception $e) {
 
-//                return $e->getMessage();
-//            }
+               return $e->getMessage();
+           }
 
-//            //SMS to EE after successful payment
+           //SMS to EE after successful payment
 
-//            try {
-// // UNCOMMENT IT WHEN YOU ARE GONNA LIVE
-//              $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+           try {
+// UNCOMMENT IT WHEN YOU ARE GONNA LIVE
+             $phoneNumbers = DB::table('users')->where('division_id', $form1->division_id)->where('role_id', 2)->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-//              $client = new Client();
-//              $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-//                'form_params' => [
-//                    'api_key' => env('SMS_API_KEY'),
-//                    'number' => $phoneNumbers,
-//                    'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
-//                    'template_id'=>'1007431101812136669',
+             $client = new Client();
+             $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+               'form_params' => [
+                   'api_key' => env('SMS_API_KEY'),
+                   'number' => $phoneNumbers,
+                   'message' =>'Memo: '.$form1->memo.', '.$form1->name.' completed payment. Login to portal for granting Roadcutting Permission .DoICT',
+                   'template_id'=>'1007431101812136669',
 
-//                ]
-//            ]);
-// // UNCOMMENT IT WHEN YOU ARE GONNA LIVE
-//            } catch (\Exception $e) {
+               ]
+           ]);
+// UNCOMMENT IT WHEN YOU ARE GONNA LIVE
+           } catch (\Exception $e) {
 
-//             return $e->getMessage();
-//            }
+            return $e->getMessage();
+           }
 
            return response()->json([
             "paymentUpdate" => $paymentUpdate

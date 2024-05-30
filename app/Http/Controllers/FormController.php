@@ -478,29 +478,29 @@ return response()->json(
 //           //SMS 1
 
 
-//               try {
+              try {
 
 
-// $client = new Client();
+$client = new Client();
 
-// $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-//                   'form_params' => [
-//                       'api_key' => env('SMS_API_KEY'),
-//                       'number' => $form->phone,
-//                       'message' =>'Your Road Cutting Form submitted successfully. Memo:'.$form->memo.'. DoICT',
-//                       'template_id'=>'1007188179559525584',
-//                       // 'number' => $phone_number,
-//                       // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-//                     //   info($response)
-//                   ]
-//               ]);
-//             //   info($response);
+$response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+                  'form_params' => [
+                      'api_key' => env('SMS_API_KEY'),
+                      'number' => $form->phone,
+                      'message' =>'Your Road Cutting Form submitted successfully. Memo:'.$form->memo.'. DoICT',
+                      'template_id'=>'1007188179559525584',
+                      // 'number' => $phone_number,
+                      // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+                    //   info($response)
+                  ]
+              ]);
+            //   info($response);
 
-//               } catch (\Exception $e) {
+              } catch (\Exception $e) {
 
-//                   info($e);
-//                   return $e->getMessage();
-//               }
+                  info($e);
+                  return $e->getMessage();
+              }
 //         // END commenting the sms for development testing
 
 
@@ -510,28 +510,28 @@ return response()->json(
 
 //           // SMS 9
 
-//           try {
+          try {
 
-//             $phoneNumbers = DB::table('users')->where('division_id', $form->division_id )->where('disable_account_status', 0 )->pluck('phone')->implode(',');
+            $phoneNumbers = DB::table('users')->where('division_id', $form->division_id )->where('disable_account_status', 0 )->pluck('phone')->implode(',');
 
-//             $client = new Client();
-//             $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
-//               'form_params' => [
-//                   'api_key' => env('SMS_API_KEY'),
-//                   'number' => $phoneNumbers,
-//                   'message' =>'Memo: '.$form->memo.', '.$form->name.', '.$form->phone.', '.$form->houseno.', '.$form->localcouncil_name.' Div:'.$div.', Sub-div: '.$sub.' has submitted Roadcutting form. DoICT',
-//                   'template_id'=>'1007321530081521077',
-//                 //   'message' =>$form->name.', '.$form->phone.', Memo: '.$form->memo.' , has submitted a Road Cutting Form .DoICT',
-//                 //   'template_id'=>'1007288255454078914',
-//                   // 'number' => $phone_number,
-//                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
-//               ]
-//           ]);
+            $client = new Client();
+            $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
+              'form_params' => [
+                  'api_key' => env('SMS_API_KEY'),
+                  'number' => $phoneNumbers,
+                  'message' =>'Memo: '.$form->memo.', '.$form->name.', '.$form->phone.', '.$form->houseno.', '.$form->localcouncil_name.' Div:'.$div.', Sub-div: '.$sub.' has submitted Roadcutting form. DoICT',
+                  'template_id'=>'1007321530081521077',
+                //   'message' =>$form->name.', '.$form->phone.', Memo: '.$form->memo.' , has submitted a Road Cutting Form .DoICT',
+                //   'template_id'=>'1007288255454078914',
+                  // 'number' => $phone_number,
+                  // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
+              ]
+          ]);
 
-//           } catch (\Exception $e) {
+          } catch (\Exception $e) {
 
-//               return $e->getMessage();
-//           }
+              return $e->getMessage();
+          }
 
 // END commenting the sms for development testing
 

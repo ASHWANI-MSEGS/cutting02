@@ -24,70 +24,14 @@ class EngineerController extends Controller
     // }
     public function index($division_id)
     {
-        if($division_id == 1)
-        {
-            $engineers = Engineer::where('division_id','1')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 2)
-        {
-            $engineers = Engineer::where('division_id','2')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 3)
+        if($division_id == 3)
         {
             $engineers = Engineer::orderBy('name','ASC')->paginate();
         }
+        else
+        {
 
-        elseif($division_id == 4)
-        {
-            $engineers = Engineer::where('division_id','4')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 5)
-        {
-            $engineers = Engineer::where('division_id','5')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 6)
-        {
-            $engineers = Engineer::where('division_id','6')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 7)
-        {
-            $engineers = Engineer::where('division_id','7')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 8)
-        {
-            $engineers = Engineer::where('division_id','8')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 9)
-        {
-            $engineers = Engineer::where('division_id','9')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 10)
-        {
-            $engineers = Engineer::where('division_id','10')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 11)
-        {
-            $engineers = Engineer::where('division_id','11')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 12)
-        {
-            $engineers = Engineer::where('division_id','12')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 13)
-        {
-            $engineers = Engineer::where('division_id','13')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 14)
-        {
-            $engineers = Engineer::where('division_id','14')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 15)
-        {
-            $engineers = Engineer::where('division_id','15')->orderBy('name','ASC')->paginate();
-        }
-        elseif($division_id == 16)
-        {
-            $engineers = Engineer::where('division_id','16')->orderBy('name','ASC')->paginate();
+            $engineers = Engineer::where('division_id',$division_id)->orderBy('name','ASC')->paginate();
         }
 
         return response()->json([
@@ -264,7 +208,7 @@ class EngineerController extends Controller
      */
     public function edit(Request $request)
     {
-        info($request);
+      
         $engineer = Engineer::find($request->id);
 
         $engineer->name = $request->name;
