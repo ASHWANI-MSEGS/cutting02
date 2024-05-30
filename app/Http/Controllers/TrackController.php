@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Form;
+use App\BeneficiaryDetails;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\dd;
@@ -53,12 +54,12 @@ class TrackController extends Controller
         // $form = Form::findOrFail($memo);
 
 // dd($request,"house");
-$checkingAsh = $request;
+// $checkingAsh = $request;
         $form = DB::table('forms')->where('memo',$request->number)->get();
 
         return response()->json([
             "form" => $form,
-            "checking"=>$checkingAsh
+            // "checking"=>$checkingAsh
         ], 201);
     }
 
@@ -94,5 +95,15 @@ $checkingAsh = $request;
     public function destroy($id)
     {
         //
+    }
+    public function beneficiaryDetails($division_id)
+    {
+
+        $beneficiaryDetails = BeneficiaryDetails::where('division_id', $division_id)->orderBy('updated_at', 'ASC')->first();
+        return response()->json([
+            "beneficiaryDetails" => $beneficiaryDetails,
+
+        ], 200);
+
     }
 }

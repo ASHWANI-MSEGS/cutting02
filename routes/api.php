@@ -123,6 +123,7 @@ Route::group([
 
 
     Route::post('/track', 'TrackController@show');
+    Route::get('/beneficiaryDetails/{division_id}', 'TrackController@beneficiaryDetails');
 
     //PaymentController
     Route::post('/cryptoRequest', 'HDFCPaymentController@create');
@@ -222,7 +223,7 @@ Route::group(['middleware' => 'jwt.auth'], function($router){
     //EstimateController
     Route::post('/estimateSubmit', 'EstimateController@create');
     Route::patch('/estimateEditApprove','EstimateController@edit');
-// incase of payment failure but the amount is deducted we can enter the details manually 
+// incase of payment failure but the amount is deducted we can enter the details manually
     Route::post('/manualOnlinePayment', 'HDFCPaymentController@manualOnlinePayment');
     // form manual RTGS
     Route::post('/manualOnlinePaymentRTGS', 'HDFCPaymentController@manualOnlinePaymentRTGS');

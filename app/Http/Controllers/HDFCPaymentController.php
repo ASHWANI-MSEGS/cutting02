@@ -274,8 +274,8 @@ info($request."               starting request");
         if($form->track_status == 5)
         {
             // return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form->id); original code
-            // return \Redirect::to('http://localhost:8000/paymentPage/'.$form->id); // for local
-            return \Redirect::to('http://localhost:8000/paymentPage/'.$form->id); // for local
+            // return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form->id); // for local
+            return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form->id); // for local
 
         }
 
@@ -399,7 +399,7 @@ info($request."               starting request");
 
                 // $form = Form::where('memo', $form_memo)->first();
                 // return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
-                return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+                return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
 
             }
 
@@ -660,7 +660,7 @@ info($request."               starting request");
              $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
              // $form = Form::where('memo', $form_memo)->first();
-             return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+             return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
              // original code
             //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -916,7 +916,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -1174,7 +1174,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -1432,7 +1432,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -1689,7 +1689,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -1946,7 +1946,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -2204,7 +2204,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -2460,7 +2460,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -2715,7 +2715,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -2973,7 +2973,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -3233,7 +3233,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -3490,7 +3490,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -3748,7 +3748,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -4005,7 +4005,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('http://localhost:8000/paymentPage/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
