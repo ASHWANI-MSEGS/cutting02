@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
             'password'=> Hash::make('password123'),
             'role_id'=> 1,
             'division_id' => 3,
-            'phone' => 9158086237,
+            'phone' => 8415039166,
             'api_token' => Str::random(10),
         ]);
 
@@ -43,7 +43,7 @@ class UsersTableSeeder extends Seeder
             'password'=> Hash::make('password123'),
             'role_id'=> 3,
             'division_id' => 2,
-            'phone' => 9158086237,
+            'phone' => 8415039166,
             'api_token' => Str::random(10),
         ]);
 
@@ -53,7 +53,7 @@ class UsersTableSeeder extends Seeder
             'password'=> Hash::make('password123'),
             'role_id'=> 2,
             'division_id' => 2,
-            'phone' => 9158086237,
+            'phone' => 8415039166,
             'api_token' => Str::random(10),
         ]);
 
@@ -64,7 +64,7 @@ class UsersTableSeeder extends Seeder
             'password'=> Hash::make('password123'),
             'role_id'=> 3,
             'division_id' => 1,
-            'phone' => 9158086237,
+            'phone' => 8415039166,
             'api_token' => Str::random(10),
         ]);
 
@@ -74,7 +74,7 @@ class UsersTableSeeder extends Seeder
             'password'=> Hash::make('password123'),
             'role_id'=> 2,
             'division_id' => 1,
-            'phone' => 9158086237,
+            'phone' => 8415039166,
             'api_token' => Str::random(10),
         ]);
 
