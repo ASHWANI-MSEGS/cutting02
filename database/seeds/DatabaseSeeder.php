@@ -33,5 +33,7 @@ class DatabaseSeeder extends Seeder
          $this->call(LungleiRoadDiv2HnahthialSeeder::class);
           $this->call(NationalHighwayDivOneSeeder::class);
          $this->call(NationalHighwayDivThreeSeeder::class);
+         // beneficialry
+         $this->call(BeneficiaryDetailsSeeder::class);
     }
 }
