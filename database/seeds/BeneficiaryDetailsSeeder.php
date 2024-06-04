@@ -46,7 +46,7 @@ class BeneficiaryDetailsSeeder extends Seeder
 // National Highway Div-I
                 ['beneficiary_name' => '12345', 'division_id'=>15 ,'beneficiary_account_no' => '12345', 'bank_name' => '12345', 'branch' => '12345', 'ifsc' => '12345','beneficiary_address' => '12345','beneficiary_contact' => '12345'],
       // National Highway Div-III
-      ['beneficiary_name' => '12345', 'division_id'=>16 ,'beneficiary_account_no' => '12345', 'bank_name' => '12345', 'branch' => '12345', 'ifsc' => '12345','beneficiary_address' => '12345','beneficiary_contact' => '12345'],
+      ['beneficiary_name' => 'national3', 'division_id'=>16 ,'beneficiary_account_no' => '12345', 'bank_name' => '12345', 'branch' => '12345', 'ifsc' => '12345','beneficiary_address' => '12345','beneficiary_contact' => '12345'],
 
             ];
 
@@ -77,4 +77,3 @@ class BeneficiaryDetailsSeeder extends Seeder
 
 
 }
-
