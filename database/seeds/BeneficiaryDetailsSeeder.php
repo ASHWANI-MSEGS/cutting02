@@ -28,7 +28,7 @@ class BeneficiaryDetailsSeeder extends Seeder
 // Siatual
                 ['beneficiary_name' => '12345', 'division_id'=>6 ,'beneficiary_account_no' => '12345', 'bank_name' => '12345', 'branch' => '12345', 'ifsc' => '12345','beneficiary_address' => '12345','beneficiary_contact' => '12345'],
 // Mamit12345
-                ['beneficiary_name' => 'mamitname', 'division_id'=>7 ,'beneficiary_account_no' => 'maamitaccount', 'bank_name' => 'mamitbak', 'branch' => 'mamitbranch', 'ifsc' => 'ifsc12345','beneficiary_address' => 'khtala','beneficiary_contact' => '09999999999'],
+                ['beneficiary_name' => 'mamitnameraunak', 'division_id'=>7 ,'beneficiary_account_no' => 'maamitaccount', 'bank_name' => 'mamitbak', 'branch' => 'mamitbranch', 'ifsc' => 'ifsc12345','beneficiary_address' => 'khtala','beneficiary_contact' => '09999999999'],
 // Siaha
                 ['beneficiary_name' => '12345', 'division_id'=>8 ,'beneficiary_account_no' => '12345', 'bank_name' => '12345', 'branch' => '12345', 'ifsc' => '12345','beneficiary_address' => '12345','beneficiary_contact' => '12345'],
 // Khawzawl
