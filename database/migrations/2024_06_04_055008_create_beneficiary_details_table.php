@@ -20,7 +20,7 @@ class CreateBeneficiaryDetailsTable extends Migration
             $table->string('beneficiary_account_no');
             $table->string('bank_name');
             $table->string('branch');
-            $table->string('ifsc');
+            $table->string('ifsc'); 
             $table->string('beneficiary_address');
             $table->string('beneficiary_contact');
             $table->timestamps();
