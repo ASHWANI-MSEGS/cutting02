@@ -547,7 +547,7 @@ class HDFCPaymentController extends Controller
 
 
             //  return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id); original
-            return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+            return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
 
 
             //return \Redirect::to('/paymentHandler/'.$payment->id);
@@ -808,7 +808,7 @@ class HDFCPaymentController extends Controller
 
 
         //   return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id); //original
-         return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+         return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
          //return \Redirect::to('/paymentHandler/'.$payment->id);
      //    return response()->json([
      //        "rcvdString" => $rcvdString,
@@ -1065,7 +1065,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
     //   return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id); //original
-    return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+    return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
 
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
@@ -1323,7 +1323,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -1579,7 +1579,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -1837,7 +1837,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -2095,7 +2095,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -2351,7 +2351,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -2607,7 +2607,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -2864,7 +2864,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -3123,7 +3123,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -3382,7 +3382,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -3639,7 +3639,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -3898,7 +3898,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -4155,7 +4155,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,

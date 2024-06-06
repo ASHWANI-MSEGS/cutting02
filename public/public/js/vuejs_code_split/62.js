@@ -1,1 +1,427 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[62],{252:function(t,s,e){"use strict";e.r(s);var a={name:"reportDateSuccess",data:function(){return{form:"",report:"",loading:!0}},mounted:function(){var t=this;axios.get("/api/auth/reportDateSuccess/"+this.$route.params.id).then((function(s){t.form=s.data.form,t.report=s.data.report,t.loading=!1})).catch((function(s){t.loading=!1,404===s.response.status&&t.$router.push("/forms")}))},methods:{printme:function(){window.print()}}},r=e(0),c=Object(r.a)(a,(function(){var t=this,s=t.$createElement,e=t._self._c||s;return e("div",{staticClass:"flex flex-col "},[e("div",{staticClass:"relative flex justify-center bg-gray-200 h-screen  w-auto pb-4"},[e("div",{staticClass:" mt-10 mx-10 flex flex-col w-4/5 md:w-2/4 lg:w-1/3 "},[e("div",{staticClass:"rounded-t-lg  flex items-center justify-center h-32 bg-successcyan"},[e("div",{},[e("svg",{staticClass:"fill-current text-white",staticStyle:{"enable-background":"new 0 0 300 300"},attrs:{version:"1.1",id:"Layer_1",xmlns:"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink",x:"0px",y:"0px",viewBox:"0 0 300 300",width:"80",height:"80","xml:space":"preserve"}},[e("path",{staticClass:"st0",attrs:{d:"M221.4,84.3c-6-4.3-14.4-3-18.7,3.1l-65.9,92.2c-1.8,2-4.1,2.6-5.3,2.7c-1.2,0.1-3.7-0.1-5.7-2l-42.7-41\r\n\t                                        c-5.3-5.1-13.8-4.9-18.9,0.4c-5.1,5.3-4.9,13.8,0.4,18.9l42.8,41c6.4,6.1,14.9,9.5,23.8,9.5c0.7,0,1.5,0,2.2-0.1\r\n\t                                        c9.6-0.6,18.5-5.3,24.5-12.8c0.2-0.2,0.3-0.4,0.4-0.6l66.2-92.5C228.7,97,227.4,88.6,221.4,84.3L221.4,84.3z"}}),t._v(" "),e("path",{staticClass:"st0",attrs:{d:"M143.8,3.7C65.8,3.7,2.6,66.9,2.6,144.9s63.2,141.2,141.2,141.2S285,222.9,285,144.9S221.8,3.7,143.8,3.7z\r\n\t                                        M143.8,262.4c-64.6,0-117.1-52.4-117.1-117.1c0-64.6,52.4-117.1,117.1-117.1s117.1,52.4,117.1,117.1\r\n\t                                        C260.8,210,208.4,262.4,143.8,262.4z"}})])])]),t._v(" "),t._m(0),t._v(" "),e("div",{staticClass:"flex items-center flex-row justify-between mt-3 bg-white h-24 rounded-t-lg rounded-b-lg border-b-4 border-dashed"},[e("div",{staticClass:"flex flex-col ml-8"},[e("p",{staticClass:"text-sm font-light"},[t._v("Memo No")]),t._v(" "),e("p",{staticClass:"text-lg font-medium"},[t._v(t._s(t.form.memo))])]),t._v(" "),e("button",{staticClass:"mr-8 hover:text-gray-400",on:{click:function(s){return s.preventDefault(),t.printme.apply(null,arguments)}}},[e("svg",{staticClass:"fill-current text-gray-700",staticStyle:{"enable-background":"new 0 0 300 300"},attrs:{version:"1.1",id:"Layer_1",width:"30",height:"30",xmlns:"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink",x:"0px",y:"0px",viewBox:"0 0 300 300","xml:space":"preserve"}},[e("path",{staticClass:"st0",attrs:{d:"M257.5,61.4h-21.2V15.1c0-4.5-3.6-8.1-8.1-8.1H73.8c-4.5,0-8.1,3.6-8.1,8.1v46.2H44.4\r\n\t                                        c-22,0.1-39.8,17.9-39.8,40v80.3c0,22,17.9,39.8,39.8,39.8h21.3v70.3c0,4.5,3.6,8.1,8.1,8.1h154.3c4.5,0,8.1-3.6,8.1-8.1v-70.3h21.2\r\n\t                                        c22,0,39.9-17.9,39.9-39.8v-80.3C297.4,79.3,279.6,61.4,257.5,61.4z M81.9,23.3H220v38.1H81.9V23.3z M220,283.6H81.9v-90.1H220\r\n\t                                        V283.6z M281.2,181.6c0,13-10.6,23.6-23.6,23.6h-21.2v-11.6h10c4.5,0,8.1-3.6,8.1-8.1s-3.6-8.1-8.1-8.1H55.7c-4.5,0-8.1,3.6-8.1,8.1\r\n\t                                        c0,4.5,3.6,8.1,8.1,8.1h10v11.6H44.4c-13,0-23.6-10.6-23.6-23.6v-80.3c0-13,10.6-23.6,23.6-23.6h213.1c13,0,23.6,10.6,23.6,23.6\r\n\t                                        L281.2,181.6L281.2,181.6z"}}),t._v(" "),e("path",{staticClass:"st0",attrs:{d:"M106.4,265.8h89.3c4.5,0,8.1-3.6,8.1-8.1s-3.6-8.1-8.1-8.1h-89.3c-4.5,0-8.1,3.6-8.1,8.1\r\n\t                                        C98.2,262.1,101.9,265.8,106.4,265.8z"}}),t._v(" "),e("path",{staticClass:"st0",attrs:{d:"M106.4,230.5h89.3c4.5,0,8.1-3.6,8.1-8.1s-3.6-8.1-8.1-8.1h-89.3c-4.5,0-8.1,3.6-8.1,8.1\r\n\t                                        C98.2,226.9,101.9,230.5,106.4,230.5z"}}),t._v(" "),e("circle",{staticClass:"st0",attrs:{cx:"254.4",cy:"104.3",r:"8.1"}}),t._v(" "),e("circle",{staticClass:"st0",attrs:{cx:"254.4",cy:"132.4",r:"8.1"}})])])]),t._v(" "),e("div",{staticClass:"bg-white h-64 rounded-t-lg  h-auto rounded-b-lg border-gray-200"},[e("div",{staticClass:"ml-8 my-8 py-2 pl-2  flex justify-start"},[t._m(1),t._v(" "),e("div",{staticClass:"ml-4 flex flex-col"},[e("p",{staticClass:"py-1"},[t._v(": "+t._s(t.form.name))]),t._v(" "),e("p",{staticClass:"py-1"},[t._v(": "+t._s(t.form.email))]),t._v(" "),e("p",{staticClass:"py-1"},[t._v(": "+t._s(t.form.phone))]),t._v(" "),e("p",{staticClass:"py-1"},[t._v(": "+t._s(t.report.date))]),t._v(" "),e("p",{staticClass:"py-1"},[t._v(": "+t._s(t.report.created_at))])])])])])])])}),[function(){var t=this.$createElement,s=this._self._c||t;return s("div",{staticClass:"flex items-center justify-center flex-col bg-white h-24 rounded-b-lg"},[s("p",{staticClass:"text-2xl font-normal"},[this._v("Road Cutting Date submitted!!")]),this._v(" "),s("p",{staticClass:"font-sans font-thin text-sm"},[this._v("Road Cutting i tih ni tur kan lo dawn e")])])},function(){var t=this,s=t.$createElement,e=t._self._c||s;return e("div",{staticClass:"flex flex-col "},[e("p",{staticClass:"py-1"},[t._v("Name")]),t._v(" "),e("p",{staticClass:"py-1"},[t._v("Email ID")]),t._v(" "),e("p",{staticClass:"py-1"},[t._v("Phone Number")]),t._v(" "),e("p",{staticClass:"py-1"},[t._v("Road cutting date:")]),t._v(" "),e("p",{staticClass:"py-1"},[t._v("Reported On: ")])])}],!1,null,"89f21ae4",null);s.default=c.exports}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[62],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/EE/ReportDateList.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/EE/ReportDateList.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_PulseLoader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/PulseLoader */ "./resources/js/components/PulseLoader.vue");
+/* harmony import */ var _Pagination_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Pagination.vue */ "./resources/js/views/Pagination.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "ReportDateList",
+  components: {
+    PulseLoader: _components_PulseLoader__WEBPACK_IMPORTED_MODULE_0__["default"],
+    pagination: _Pagination_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      offset: 3,
+      pagination: {},
+      loading: true,
+      reports: null,
+      user: this.$store.getters.currentUser // reportSouthCount:'',
+      // reportNorthCount:'',
+
+    };
+  },
+  created: function created() {
+    this.fetchUsers();
+  },
+  methods: {
+    fetchUsers: function fetchUsers() {
+      var _this = this;
+
+      var current_page = this.pagination.current_page;
+      var pageNum = current_page ? current_page : 1;
+      var division_id = this.user.division_id;
+      console.log(division_id, "user div");
+      axios.get('/api/reportDateList/' + division_id + '?page=' + pageNum, {
+        headers: {
+          "Authorization": "Bearer ".concat(this.$store.getters.currentUser.token)
+        }
+      }).then(function (response) {
+        console.log(response.data);
+        _this.pagination = response.data.reports;
+        _this.reports = response.data.reports;
+        console.log(_this.reports); // this.reportSouthCount = response.data.reportSouthCount;
+        // this.reportNorthCount = response.data.reportNorthCount;
+
+        _this.loading = false;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/EE/ReportDateList.vue?vue&type=template&id=7daeedc0&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/EE/ReportDateList.vue?vue&type=template&id=7daeedc0&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "min-h-screen" }, [
+    _vm.loading
+      ? _c(
+          "div",
+          [_c("PulseLoader", { staticClass: "object-center h-screen " })],
+          1
+        )
+      : _c(
+          "div",
+          [
+            _vm.reports.total === 0
+              ? _c("div", [_c("p", [_vm._v("No Report Date List")])])
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "w-full px-2 mx-1 mt-3 text-white rounded-t-lg sm:py-3 md:py-3 md:mx-3 bg-tableheader"
+              },
+              [
+                _c(
+                  "p",
+                  [
+                    _vm._v("Total:\n                    "),
+                    [_vm._v("  " + _vm._s(_vm.reports.total) + " ")]
+                  ],
+                  2
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _vm._l(_vm.reports.data, function(report) {
+              return _c(
+                "div",
+                { key: report.id },
+                [
+                  report.division_id == _vm.user.division_id
+                    ? [
+                        _c(
+                          "router-link",
+                          { attrs: { to: "/reportDateShow/" + report.id } },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "w-full px-2 py-2 mx-1 bg-white md:mx-3 hover:bg-tablehover"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "grid grid-cols-1 gap-0 md:grid-cols-3 md:gap-1 "
+                                  },
+                                  [
+                                    _c("div", { staticClass: "ml-1" }, [
+                                      _vm._v(
+                                        "Memo: " + _vm._s(report.form_memo)
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "ml-1" }, [
+                                      _vm._v(
+                                        "Report date for Roadcutting: " +
+                                          _vm._s(report.date)
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "ml-1" },
+                                      [
+                                        report.division_id == 1
+                                          ? [
+                                              _vm._v(
+                                                "\n                                    Div: Road South\n                                "
+                                              )
+                                            ]
+                                          : report.division_id == 2
+                                          ? [
+                                              _vm._v(
+                                                "\n                                    Div: Road North\n                                "
+                                              )
+                                            ]
+                                          : report.division_id == 4
+                                          ? [
+                                              _vm._v(
+                                                "\n                                    Div: Road Champhai\n                                "
+                                              )
+                                            ]
+                                          : report.division_id == 5
+                                          ? [
+                                              _vm._v(
+                                                "\n                                    Div: Road Lunglei\n                                "
+                                              )
+                                            ]
+                                          : report.division_id == 6
+                                          ? [
+                                              _vm._v(
+                                                "\n                                    Div: Road Saitual\n                                "
+                                              )
+                                            ]
+                                          : report.division_id == 7
+                                          ? [
+                                              _vm._v(
+                                                "\n                                    Div: Road Mamit\n                                "
+                                              )
+                                            ]
+                                          : report.division_id == 8
+                                          ? [
+                                              _vm._v(
+                                                "\n                                    Div: Road Siaha\n                                "
+                                              )
+                                            ]
+                                          : report.division_id == 9
+                                          ? [
+                                              _vm._v(
+                                                "\n                                    Div: Road Khawzawl\n                                "
+                                              )
+                                            ]
+                                          : report.division_id == 10
+                                          ? [
+                                              _vm._v(
+                                                "\n                                    Div: Road Kolasib\n                                "
+                                              )
+                                            ]
+                                          : report.division_id == 11
+                                          ? [
+                                              _vm._v(
+                                                "\n                                    Div: Road Lawngtlai\n                                "
+                                              )
+                                            ]
+                                          : report.division_id == 12
+                                          ? [
+                                              _vm._v(
+                                                "\n                                    Div: Road Serchhip\n                                "
+                                              )
+                                            ]
+                                          : report.division_id == 13
+                                          ? [
+                                              _vm._v(
+                                                "\n                                    Div: Road Hnahthial\n                                "
+                                              )
+                                            ]
+                                          : _vm._e()
+                                      ],
+                                      2
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("hr")
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    : _vm._e()
+                ],
+                2
+              )
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "mx-3 my-3" },
+              [
+                _c("pagination", {
+                  attrs: { pagination: _vm.pagination, offset: 4 },
+                  on: { paginate: _vm.fetchUsers }
+                })
+              ],
+              1
+            )
+          ],
+          2
+        )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/views/EE/ReportDateList.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/views/EE/ReportDateList.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ReportDateList_vue_vue_type_template_id_7daeedc0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ReportDateList.vue?vue&type=template&id=7daeedc0&scoped=true& */ "./resources/js/views/EE/ReportDateList.vue?vue&type=template&id=7daeedc0&scoped=true&");
+/* harmony import */ var _ReportDateList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReportDateList.vue?vue&type=script&lang=js& */ "./resources/js/views/EE/ReportDateList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ReportDateList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ReportDateList_vue_vue_type_template_id_7daeedc0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ReportDateList_vue_vue_type_template_id_7daeedc0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "7daeedc0",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/EE/ReportDateList.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/EE/ReportDateList.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/views/EE/ReportDateList.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ReportDateList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ReportDateList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/EE/ReportDateList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ReportDateList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/EE/ReportDateList.vue?vue&type=template&id=7daeedc0&scoped=true&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/views/EE/ReportDateList.vue?vue&type=template&id=7daeedc0&scoped=true& ***!
+  \*********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReportDateList_vue_vue_type_template_id_7daeedc0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ReportDateList.vue?vue&type=template&id=7daeedc0&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/EE/ReportDateList.vue?vue&type=template&id=7daeedc0&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReportDateList_vue_vue_type_template_id_7daeedc0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReportDateList_vue_vue_type_template_id_7daeedc0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);

@@ -485,7 +485,7 @@ export default {
                 axios.get('/api/checkIfUserDisabled/' + this.login.email)
                     .then(response => {
                         console.log(response.data.status, "checking the status");
-                        this.accountStatus = response.data.status; 
+                        this.accountStatus = response.data.status;
                         resolve(); // Resolve the promise after updating accountStatus
                     })
                     .catch(error => reject(error));
