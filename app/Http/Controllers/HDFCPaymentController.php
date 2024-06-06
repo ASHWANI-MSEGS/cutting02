@@ -275,7 +275,7 @@ class HDFCPaymentController extends Controller
         {
             // return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form->id); original code
             // return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form->id); // for local
-            return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form->id); // for local
+            return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form->id); // for local
 
         }
 
@@ -399,7 +399,7 @@ class HDFCPaymentController extends Controller
 
                 // $form = Form::where('memo', $form_memo)->first();
                 // return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
-                return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+                return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
 
             }
 
@@ -547,7 +547,7 @@ class HDFCPaymentController extends Controller
 
 
             //  return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id); original
-            return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+            return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
 
 
             //return \Redirect::to('/paymentHandler/'.$payment->id);
@@ -660,7 +660,7 @@ class HDFCPaymentController extends Controller
              $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
              // $form = Form::where('memo', $form_memo)->first();
-             return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+             return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
              // original code
             //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -808,7 +808,7 @@ class HDFCPaymentController extends Controller
 
 
         //   return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id); //original
-         return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+         return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
          //return \Redirect::to('/paymentHandler/'.$payment->id);
      //    return response()->json([
      //        "rcvdString" => $rcvdString,
@@ -916,7 +916,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -1065,7 +1065,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
     //   return \Redirect::to('http://localhost:8000/paymentHandler/'.$payment->id); //original
-    return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+    return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
 
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
@@ -1174,7 +1174,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -1323,7 +1323,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -1432,7 +1432,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -1579,7 +1579,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -1689,7 +1689,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -1837,7 +1837,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -1946,7 +1946,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -2095,7 +2095,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -2204,7 +2204,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -2351,7 +2351,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -2460,7 +2460,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -2607,7 +2607,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -2715,7 +2715,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -2864,7 +2864,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -2973,7 +2973,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -3123,7 +3123,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -3233,7 +3233,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -3382,7 +3382,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -3490,7 +3490,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -3639,7 +3639,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -3748,7 +3748,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -3898,7 +3898,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
@@ -4006,7 +4006,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
         $payment3 = DB::table('payments')->where('id',$payment->id)->update(['sub_div'=>$form1->sub_div]);
 
         // $form = Form::where('memo', $form_memo)->first();
-        return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$form1->id);
+        return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentPage/'.$form1->id);
         // original code
        //  return \Redirect::to('https://pwdroadcutting.mizoram.gov.in/paymentPage/'.$form1->id);
 // original code end
@@ -4155,7 +4155,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
     //  }
 
 
-     return \Redirect::to('https://roadcutting.stagingmsegs.in/'.$payment->id);
+     return \Redirect::to('https://roadcutting.stagingmsegs.in/paymentHandler/'.$payment->id);
     //return \Redirect::to('/paymentHandler/'.$payment->id);
 //    return response()->json([
 //        "rcvdString" => $rcvdString,
