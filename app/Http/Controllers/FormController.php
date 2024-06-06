@@ -606,8 +606,8 @@ $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
         if($form->division_id == 1){
 
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandler";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandler";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandler";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandler";
             //ORIGINAL CODE
             // $merchant_id = 313301;
             // $redirect_url = "https://pwdroadcutting.mizoram.gov.in/api/auth/responseHandler";
@@ -619,8 +619,8 @@ $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
           else if ($form->division_id == 2){
 
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerNorth";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerNorth";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerNorth";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerNorth";
             // ORIGINAL CODE
             // $merchant_id = 313302;
             // $redirect_url = "https://pwdroadcutting.mizoram.gov.in/api/auth/responseHandlerNorth";
@@ -630,82 +630,82 @@ $response=$client->request ('POST','https://sms.mizoram.gov.in/api', [
 
           else if ($form->division_id == 4){
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerChamphai";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerChamphai";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerChamphai";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerChamphai";
 
           }
           else if ($form->division_id == 5){
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerLunglei";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerLunglei";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerLunglei";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerLunglei";
 
           }
           else if ($form->division_id == 6){
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerSaitual";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerSaitual";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerSaitual";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerSaitual";
 
           }
           else if ($form->division_id == 7){
             $merchant_id = 287264;
             // $redirect_url = " http://localhost:8000/api/auth/responseHandlerMamit"; // original code
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerMamit";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerMamit";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerMamit";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerMamit";
 
           }
           else if ($form->division_id == 8){
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerSiaha";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerSiaha";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerSiaha";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerSiaha";
 
           }
           else if ($form->division_id == 9){
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerKhawzawl";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerKhawzawl";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerKhawzawl";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerKhawzawl";
 
           }
           else if ($form->division_id == 10){
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerKolasib";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerKolasib";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerKolasib";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerKolasib";
 
           }
           else if ($form->division_id == 11){
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerLawngtlai";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerLawngtlai";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerLawngtlai";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerLawngtlai";
 
           }
           else if ($form->division_id == 12){
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerSerchhip";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerSerchhip";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerSerchhip";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerSerchhip";
 
           }
           else if ($form->division_id == 13){
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerLungleiRoadDiv2Hnahthial";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerLungleiRoadDiv2Hnahthial";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerLungleiRoadDiv2Hnahthial";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerLungleiRoadDiv2Hnahthial";
 
           }
           else if ($form->division_id == 14){
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerHmuifang";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerHmuifang";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerHmuifang";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerHmuifang";
 
           }
           else if ($form->division_id == 15){
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerNationalHighwayDiv1";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerNationalHighwayDiv1";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerNationalHighwayDiv1";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerNationalHighwayDiv1";
 
           }
 
           else if ($form->division_id == 16){
             $merchant_id = 287264;
-            $redirect_url = "http://127.0.0.1:8000/api/auth/responseHandlerNationalHighwayDiv3";
-            $cancel_url = "http://127.0.0.1:8000/api/auth/responseHandlerNationalHighwayDiv3 ";
+            $redirect_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerNationalHighwayDiv3";
+            $cancel_url = "https://roadcutting.stagingmsegs.in/api/auth/responseHandlerNationalHighwayDiv3 ";
 
           }
           // once you go live this wont be required and can be removed
