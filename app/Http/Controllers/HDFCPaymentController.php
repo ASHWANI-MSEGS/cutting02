@@ -470,7 +470,7 @@ class HDFCPaymentController extends Controller
                        'api_key' => env('SMS_API_KEY'),
                        'number' => $form1->phone,
                        'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                       'template_id'=>'3214321',
+                       'template_id'=>'1007856011249564657',
                        // 'number' => $phone_number,
                        // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
                    ]
@@ -731,7 +731,7 @@ class HDFCPaymentController extends Controller
                        'api_key' => env('SMS_API_KEY'),
                        'number' => $form1->phone,
                        'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                       'template_id'=>'3214321',
+                       'template_id'=>'1007856011249564657',
                        // 'number' => $phone_number,
                        // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
                    ]
@@ -988,7 +988,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
                   'api_key' => env('SMS_API_KEY'),
                   'number' => $form1->phone,
                   'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                  'template_id'=>'3214321',
+                  'template_id'=>'1007856011249564657',
                   // 'number' => $phone_number,
                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
               ]
@@ -1246,7 +1246,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
                   'api_key' => env('SMS_API_KEY'),
                   'number' => $form1->phone,
                   'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                  'template_id'=>'3214321',
+                  'template_id'=>'1007856011249564657',
                   // 'number' => $phone_number,
                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
               ]
@@ -1503,7 +1503,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
                   'api_key' => env('SMS_API_KEY'),
                   'number' => $form1->phone,
                   'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                  'template_id'=>'3214321',
+                  'template_id'=>'1007856011249564657',
                   // 'number' => $phone_number,
                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
               ]
@@ -1760,7 +1760,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
                   'api_key' => env('SMS_API_KEY'),
                   'number' => $form1->phone,
                   'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                  'template_id'=>'3214321',
+                  'template_id'=>'1007856011249564657',
                   // 'number' => $phone_number,
                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
               ]
@@ -2016,8 +2016,8 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
               'form_params' => [
                   'api_key' => env('SMS_API_KEY'),
                   'number' => $form1->phone,
-                  'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                  'template_id'=>'3214321',
+                  'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                  'template_id'=>'1007856011249564657',
                   // 'number' => $phone_number,
                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
               ]
@@ -2275,7 +2275,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
                   'api_key' => env('SMS_API_KEY'),
                   'number' => $form1->phone,
                   'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                  'template_id'=>'3214321',
+                  'template_id'=>'1007856011249564657',
                   // 'number' => $phone_number,
                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
               ]
@@ -2531,7 +2531,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
                   'api_key' => env('SMS_API_KEY'),
                   'number' => $form1->phone,
                   'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                  'template_id'=>'3214321',
+                  'template_id'=>'1007856011249564657',
                   // 'number' => $phone_number,
                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
               ]
@@ -2787,7 +2787,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
                   'api_key' => env('SMS_API_KEY'),
                   'number' => $form1->phone,
                   'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                  'template_id'=>'3214321',
+                  'template_id'=>'1007856011249564657',
                   // 'number' => $phone_number,
                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
               ]
@@ -3045,7 +3045,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
                   'api_key' => env('SMS_API_KEY'),
                   'number' => $form1->phone,
                   'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                  'template_id'=>'3214321',
+                  'template_id'=>'1007856011249564657',
                   // 'number' => $phone_number,
                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
               ]
@@ -3305,7 +3305,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
                   'api_key' => env('SMS_API_KEY'),
                   'number' => $form1->phone,
                   'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                  'template_id'=>'3214321',
+                  'template_id'=>'1007856011249564657',
                   // 'number' => $phone_number,
                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
               ]
@@ -3562,7 +3562,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
                   'api_key' => env('SMS_API_KEY'),
                   'number' => $form1->phone,
                   'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                  'template_id'=>'3214321',
+                  'template_id'=>'1007856011249564657',
                   // 'number' => $phone_number,
                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
               ]
@@ -3820,7 +3820,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
                   'api_key' => env('SMS_API_KEY'),
                   'number' => $form1->phone,
                   'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                  'template_id'=>'3214321',
+                  'template_id'=>'1007856011249564657',
                   // 'number' => $phone_number,
                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
               ]
@@ -4078,7 +4078,7 @@ $formattedTransDate = $dateTime ? $dateTime->format('Y-m-d H:i:s') : null;
                   'api_key' => env('SMS_API_KEY'),
                   'number' => $form1->phone,
                   'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
-                  'template_id'=>'3214321',
+                  'template_id'=>'1007856011249564657',
                   // 'number' => $phone_number,
                   // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
               ]
@@ -4389,7 +4389,7 @@ public function manualOnlinePaymentRTGS(Request $request)
                'form_params' => [
                    'api_key' => env('SMS_API_KEY'),
                    'number' => $form1->phone,
-                   'message' =>'Memo: '.$form1->memo.', We received your payment Rs. '.$paymentUpdate->amount.' .DoICT',
+                   'message' =>'Memo: '.$form1->memo.', We received your  payment Rs. '.$paymentUpdate->amount.' .DoICT',
                    'template_id'=>'1007856011249564657',
                    // 'number' => $phone_number,
                    // 'message' => $mOTP . ' is your OTP from eTender, MSeGS',
